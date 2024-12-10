@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_project_skl_3/screen/hehe.dart';
 import 'package:qr_project_skl_3/screen/home_screen.dart';
@@ -6,7 +7,11 @@ import 'package:qr_project_skl_3/screen/qr_scanner_screen.dart';
 import 'package:qr_project_skl_3/screen/splash_screen.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(DevicePreview(
+      enabled: true,
+      defaultDevice: Devices.ios.iPhone13ProMax,
+      devices: [Devices.ios.iPhone13ProMax],
+      builder: (context) => MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -15,6 +20,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      useInheritedMediaQuery: true,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Manrope',
@@ -29,6 +35,8 @@ class MainApp extends StatelessWidget {
         '/hehe': (context) => const Hehe(),
       },
       initialRoute: '/',
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
     );
   }
 }
