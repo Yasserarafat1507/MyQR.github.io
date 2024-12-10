@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/yasser/Downloads/Flutter app/qr_project_skl_3/android/app"
+    name=":app"
+    type="APP"
+    maven="android:app:"
+    agpVersion="8.1.0"
+    buildFolder="/Users/yasser/Downloads/Flutter app/qr_project_skl_3/build/app"
+    bootClassPath="/Users/yasser/Library/Android/sdk/platforms/android-34/android.jar:/Users/yasser/Library/Android/sdk/build-tools/33.0.1/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-34">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
